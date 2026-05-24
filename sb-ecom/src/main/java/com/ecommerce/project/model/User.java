@@ -16,6 +16,7 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 @Table(name = "users",
         uniqueConstraints = {
         @UniqueConstraint(columnNames = "username"),
@@ -56,15 +57,16 @@ public class User {
                 inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
-
+    @Getter
+    @Setter
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(name = "user_address",
                 joinColumns = @JoinColumn(name = "user_id"),
                 inverseJoinColumns = @JoinColumn(name = "address_id"))
     private List<Address> addresses = new ArrayList<>();
 
+    @ToString.Exclude
     @Getter
-    @Setter
     @OneToMany(mappedBy = "user",
                 cascade = {CascadeType.PERSIST, CascadeType.MERGE },
                 orphanRemoval = true)

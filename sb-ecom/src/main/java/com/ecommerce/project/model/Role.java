@@ -1,11 +1,14 @@
 package com.ecommerce.project.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
 @Data
 @Table(name = "roles")
 public class Role {
@@ -15,6 +18,7 @@ public class Role {
     @Column(name = "role_id")
     private Integer roleId;
 
+    @ToString.Exclude
     @Enumerated(EnumType.STRING)    // this will save enum types to string
     @Column(name = "role_name", length = 20)
     private AppRole roleName;
