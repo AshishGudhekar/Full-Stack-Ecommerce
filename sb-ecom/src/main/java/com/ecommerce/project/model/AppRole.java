@@ -1,5 +1,5 @@
 package com.ecommerce.project.model;
 
 public enum AppRole {
-    ROLL_USER, ROLL_SELLER, ROLL_ADMIN
+    ROLE_USER, ROLE_SELLER, ROLE_ADMIN
 }
