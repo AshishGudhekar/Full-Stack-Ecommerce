@@ -84,7 +84,7 @@ public class CategoryServiceImpl implements CategoryService{
         if (category != null){
             return category;
         }else {
-            throw new ResourceNotFoundException("Resource not found" ,"Category", "categoryName", categoryName);
+            throw new ResourceNotFoundException("Category", "categoryName", categoryName);
         }
     }
 
