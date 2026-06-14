@@ -49,7 +49,6 @@ public class AuthController {
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@RequestBody LoginRequest loginRequest) {
 
-
         Authentication authentication;
          try{
              authentication = authenticationManager.authenticate(
